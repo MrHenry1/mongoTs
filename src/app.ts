@@ -6,7 +6,7 @@ import router from './router.ts'
 
 const app = express()
 
-mongoose.connect('mongodb+srv://henry:99099ae@users.vkrty.mongodb.net/MongoTs?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DB, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
@@ -19,5 +19,5 @@ app.use(express.json())
 
 app.use(router)
 
-app.listen(process.env.PORT || 9999, () => console.log('Serving at 9999 Hehe Alright!'))
+app.listen(process.env.PORT, () => console.log('Serving at 9999 Hehe Alright!'))
 
