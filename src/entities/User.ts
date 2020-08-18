@@ -10,7 +10,7 @@ export default class User {
   public bio: string
   public password: string
 
-  constructor(props: Omnit<User, 'idPublic'>, idPublic?: string) {
+  constructor(props: Omit<User, 'idPublic'>, idPublic?: string) {
    Object.assign(this, props)
 
    if(!idPublic) {
